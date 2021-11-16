@@ -1,5 +1,7 @@
-﻿using System;
+﻿using System.Net.WebSockets;
+using System;
 int points = 0;
+string haveplayed;
 string questionYN(string question){
 
     while(true){
@@ -32,7 +34,7 @@ string questionABC(string questionName, string questionabc, string answerA, stri
     }
 }
 
-questionYN("Have you finished more than one of the Dark Souls games?");
+haveplayed = questionYN("Have you finished more than one of the Dark Souls games?");
 
 
 
@@ -74,17 +76,43 @@ answer = questionABC("Question six:", "Who is a traitor to their own race?",
 "A: Darkstalker Kaath", "B: Annalise queen of the vilebloods", "C: Seath the scaleless");
 if(answer == "c"){
     points ++;    
-}
+    }
 
 answer = questionABC("Question seven:", "Where does Dark Souls 1 take place?",
 "A: Lothric", "B: Lordran", "C: Yharnam");
 if(answer == "b"){
     points ++;    
 }
+Console.Clear();
 
-//if(questionYN == "yes" && points =< 2){
-//    Console.WriteLine("");
-//}
-Console.WriteLine(points);
+if(points > 1){
+    Console.WriteLine($"You got {points} points out of 7\n");
+}
+else if(points == 1){
+    Console.WriteLine($"You got {points} point out of 7\n");
+}
+
+if(haveplayed == "yes" && points <= 2){
+    Console.WriteLine("How disappoiting");
+}
+if(haveplayed == "yes" && points > 2 && points <= 5){
+    Console.WriteLine("Not great, not terrible");
+}
+if(haveplayed == "yes" && points > 5){
+    Console.WriteLine("Very good, the ratio is prosperous, very good");
+}
+if(haveplayed == "no" && points <= 2){
+    Console.WriteLine("Good kind of");
+}
+if(haveplayed == "no" && points > 2 && points <= 5){
+    Console.WriteLine("Good of good");
+}
+if(haveplayed == "no" && points > 5){
+    Console.WriteLine("Very good, give me suprised and pleased");
+}
+
+//the broken english is from Star War the Third Gathers - Backstroke of the West 
+
+
 
 Console.ReadLine();
