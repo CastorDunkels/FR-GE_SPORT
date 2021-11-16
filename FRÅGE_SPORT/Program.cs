@@ -54,19 +54,19 @@ if(answer == "c"){
 
 answer = questionABC("Question three:", "Who was it that started the age of fire?", 
 "A: King Vendrick", "B: Gwyn lord of cinders", "C: Demon of hatred");
-if(answer == "c"){
+if(answer == "b"){
     points ++;    
 }
 
 answer = questionABC("Question four:", "What is the name of the blacksmith that you meet in both Dark Souls 1 and 3?",
 "A: Andre", "B: Patches", "C: Siegward");
-if(answer == "c"){
+if(answer == "a"){
     points ++;    
 }
 
 answer = questionABC("Question five:", "What covenant does Solaire of Astora belong to?",
 "A: Blades of the Darkmoon", "B: Warriors of sunlight", "C: Spears of the church");
-if(answer == "c"){
+if(answer == "b"){
     points ++;    
 }
 
@@ -78,12 +78,13 @@ if(answer == "c"){
 
 answer = questionABC("Question seven:", "Where does Dark Souls 1 take place?",
 "A: Lothric", "B: Lordran", "C: Yharnam");
-if(answer == "c"){
+if(answer == "b"){
     points ++;    
 }
 
 //if(questionYN == "yes" && points =< 2){
 //    Console.WriteLine("");
 //}
+Console.WriteLine(points);
 
 Console.ReadLine();
